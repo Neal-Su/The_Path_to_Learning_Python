@@ -43,3 +43,30 @@ print(f"元组 \t的反向排序结果：{sorted(my_tuple, reverse=True)}")
 print(f"字符串 \t的反向排序结果：{sorted(my_str, reverse=True)}")
 print(f"集合 \t的反向排序结果：{sorted(my_set, reverse=True)}")
 print(f"字典 \t的反向排序结果：{sorted(my_dict, reverse=True)}")
+
+# 扩展列表的sort排序方法对列表进行自定义排序
+# 使用方法:
+# 列表.sort(key=选择排序依据的函数, reverse=True/False)
+# """
+# 参数key：    要求传入一个函数，表示将列表的每一个元素都传入函数，返回排序的依据
+# 参数reverse：是否反转排序结果，True表示降序，False表示升序
+# """
+
+# 如下嵌套列表，排序的依据是内层列表的第二个元素数字
+# 以前学习的sorted函数就无法适用了，可以使用列表的sort方法
+# 准备列表
+my_list = [["a", 33], ["b", 55], ["c", 11]]
+
+# 排序，基于带名函数：
+# 定义排序方法函数
+def choose_sort_key(element):
+    # 这个函数的意思是把每个元素给我传进来
+    # 由我这个函数决定按照元素里面的哪一部分取排序
+    return element[1]  # 按照每个元素的下标1去排序
+
+my_list.sort(key=choose_sort_key, reverse=True)
+print(my_list)
+
+# 排序基于lambda匿名函数
+my_list.sort(key=lambda element: element[1], reverse=True)
+print(my_list)
