@@ -16,3 +16,10 @@ stu  = Student("周杰伦", 31, 18812341234)
 print(stu.name)
 print(stu.age)
 print(stu.tel)
+
+# 输出结果
+
+Student类创建了一个类对象
+周杰伦
+31
+18812341234
