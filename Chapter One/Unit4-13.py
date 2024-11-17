@@ -8,7 +8,7 @@ def test_b():
 test_a()
 test_b()
 print(num)
-# golbal关键字在局部范围内修改全局变量
+# global关键字在局部范围内修改全局变量
 
 # 输出结果
 200
